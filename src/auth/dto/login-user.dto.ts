@@ -14,4 +14,7 @@ export class LoginUserDto {
     })
     password: string;
 
+    @IsString()
+    role: string;
+
 }

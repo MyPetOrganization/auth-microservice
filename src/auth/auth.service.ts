@@ -82,6 +82,15 @@ export class AuthService {
                     message: 'User/Password not valid'
                 });
             }
+            
+            const role = loginUserDto.role;
+
+            if (role != user.role) {
+                throw new RpcException({
+                    status: 400,
+                    message: 'User/Role not valid'
+                });
+            }
 
             const { password, ...result } = user;
             return {
