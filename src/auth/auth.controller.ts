@@ -39,7 +39,7 @@ export class AuthController {
    * @returns The result of the token verification.
    */
   @MessagePattern({ cmd: 'auth_verify_user' })
-  async verifyToken(@Payload() payload: any){
+  async verifyToken(@Payload() payload: { token: string }) {
     // Deep copy the payload to avoid mutation
     payload = JSON.parse(JSON.stringify(payload));
     // Extract the token from the payload
