@@ -129,7 +129,7 @@ export class AuthService {
                 });
             }
             // Return the user data and a new token
-            const { password, ...result } = user;
+            const { password, favoriteMovie, ...result } = user;
             return {
                 user: result,
                 token: await this.signJWT({ email: user.email, id: user.id })
