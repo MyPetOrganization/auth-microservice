@@ -13,7 +13,7 @@ dotenv.config();
 @Injectable()
 export class AuthService {
     constructor(
-        @Inject(process.env.NATS) private readonly userClient: ClientProxy,
+        @Inject(process.env.USER_SERVICE) private readonly userClient: ClientProxy,
         private readonly jwtService: JwtService
     ) { }
 
